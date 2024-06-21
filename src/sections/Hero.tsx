@@ -1,10 +1,13 @@
 import Button from "../components/Button";
 import arrowRight from "../assets/icons/arrow-right.svg";
-import { bigShoe1 } from "../assets/images";
 import { shoes, statistics } from "../constants";
 import ShoeCard from "../components/ShoeCard";
+import { useState } from "react";
+import { shoeType } from "../types";
 
 function Hero() {
+  const [bigShoeImg, setBigShoeImg] = useState(shoes[0]);
+
   return (
     <section
       id="home"
@@ -39,16 +42,22 @@ function Hero() {
       </div>
       <div className="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
         <img
-          src={bigShoe1}
+          src={bigShoeImg.bigShoe}
           alt="Shoe collection"
           width={610}
           height={500}
           className="object-contain relative z-10"
         />
-        <div>
+        <div className="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
           {shoes.map((shoe, index) => (
             <div key={index}>
-              <ShoeCard />
+              <ShoeCard
+                imgURL={shoe}
+                changeBigShoeImage={(shoe: shoeType) => {
+                  setBigShoeImg(shoe);
+                }}
+                bigShoeImg={bigShoeImg}
+              />
             </div>
           ))}
         </div>
