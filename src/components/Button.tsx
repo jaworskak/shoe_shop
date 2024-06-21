@@ -15,7 +15,7 @@ function Button({
       backgroundColor
         ? `${backgroundColor} ${textColor} ${borderColor}`
         : "bg-coral-red text-white border-coral-red"
-    } rounded-full ${fullWidth && "w-full"}  `}
+    } rounded-full ${fullWidth && "w-full"}`}
     >
       {label}
 
