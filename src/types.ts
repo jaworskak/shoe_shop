@@ -30,3 +30,9 @@ export interface ReviewType {
   rating: number;
   feedback: string;
 }
+
+export interface ServiceCardType {
+  imgURL: string;
+  label: string;
+  subtext: string;
+}

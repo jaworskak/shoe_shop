@@ -1,4 +1,3 @@
-import React from "react";
 import { ReviewType } from "../types";
 import { star } from "../assets/icons";
 
